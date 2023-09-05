@@ -2,6 +2,7 @@
   "name": "prjectbase",
   "version": "1.0.0",
   "description": "a project base",
+  "sideEffects": false,
   "main": "index.js",
   "scripts": {
     "dev:dev": "cross-env NODE_ENV=development BASE_ENV=development webpack-dev-server -c build/webpack.dev.js",
@@ -11,7 +12,8 @@
     "build:dev": "cross-env NODE_ENV=production BASE_ENV=development webpack -c build/webpack.prod.js",
     "build:test": "cross-env NODE_ENV=production BASE_ENV=test webpack -c build/webpack.prod.js",
     "build:pre": "cross-env NODE_ENV=production BASE_ENV=pre webpack -c build/webpack.prod.js",
-    "build:prod": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.prod.js"
+    "build:prod": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.prod.js",
+    "build:analy": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.analy.js"
   },
   "repository": {
     "type": "git",
@@ -48,8 +50,17 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "compression-webpack-plugin": "^10.0.0",
     "copy-webpack-plugin": "^11.0.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-refresh": "^0.14.0",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "thread-loader": "^4.0.2",
+    "webpack-bundle-analyzer": "^4.9.1"
   }
 }
