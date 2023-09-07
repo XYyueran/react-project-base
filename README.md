@@ -19,3 +19,5 @@
 | css-minimizer-webpack-plugin | css压缩 |
 | terser-webpack-plugin | js压缩 |
 | webpack-bundle-analyzer | 包依赖分析 |
+
+[参考地址:掘金 Ausra无忧](https://juejin.cn/post/7111922283681153038#heading-31)
