@@ -20,11 +20,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    '@typescript-eslint/no-non-null-assertion': 'off'
-  },
-  settings: {
-    "react": {
-      "version": "detect"
-    }
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    "react/jsx-uses-react": 2
   }
 }
