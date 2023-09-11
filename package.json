@@ -4,7 +4,11 @@
   "description": "a project base",
   "sideEffects": false,
   "main": "index.js",
-  "eslint": "eslint --max-warnings=0",
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run eslint"
+    ]
+  },
   "scripts": {
     "dev:dev": "cross-env NODE_ENV=development BASE_ENV=development webpack-dev-server -c build/webpack.dev.js",
     "dev:test": "cross-env NODE_ENV=development BASE_ENV=test webpack-dev-server -c build/webpack.dev.js",
@@ -15,8 +19,9 @@
     "build:pre": "cross-env NODE_ENV=production BASE_ENV=pre webpack -c build/webpack.prod.js",
     "build:prod": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.prod.js",
     "build:analy": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.analy.js",
-    "eslint": "eslint src/**/*.{ts,tsx}",
-    "pre-check": "tsc && npx lint-staged"
+    "eslint": "eslint --max-warnings=0",
+    "pre-check": "tsc && npx lint-staged",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
